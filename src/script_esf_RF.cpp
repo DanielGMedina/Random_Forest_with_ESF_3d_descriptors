@@ -124,7 +124,7 @@ main(int argc, char** argv)
 	ofstream outfile;
 	andres::ml::DecisionForest<Feature, Label, Probability> decisionForest;	
 		
-	//if(!model){
+	if(!model){
 		///////////////////////GET DESCRIPTORS AND CLASSES//////////////////
 	
 		cout << "Getting descriptors..." << endl;	
@@ -171,7 +171,7 @@ main(int argc, char** argv)
 		outfile.open("RF_model.txt");
 		outfile << sstream.rdbuf();
 		outfile.close();
-	/*}
+	}
 	else{
 		std::ifstream inputfile( string(argv[3]), std::ifstream::binary );
 		if(inputfile){
@@ -181,7 +181,7 @@ main(int argc, char** argv)
 			
 			decisionForest.deserialize(sstream);
 		}			
-	}*/
+	}
 	
 	// test the model	
 	vector<float*> histograms_test;
